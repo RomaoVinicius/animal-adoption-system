@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Users/Dalua/sistema-adocao-animais-si200-si203/src",
-      "program": "c:/Users/Dalua/sistema-adocao-animais-si200-si203/src/build/Debug/outDebug",
+      "cwd": "c:/Users/Romao/Desktop/Unicmap/prog2/Trabalho/sistema-adocao-animais-si200-si203/src",
+      "program": "c:/Users/Romao/Desktop/Unicmap/prog2/Trabalho/sistema-adocao-animais-si200-si203/src/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
