@@ -8,6 +8,7 @@
 int main(){
     int escolha_menu,verificacao_de_erro;
     char identificador_de_exclusao[100],cpf_de_exclusao[100],identificador_de_atualizacao[100];
+    char identificador_de_exclusao[100],cpf_de_exclusao[100];
     char *ponteiro_de_exclusao;
     char *ponteiro_de_atualizacao;
     while (true){
