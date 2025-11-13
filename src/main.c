@@ -139,7 +139,7 @@ int main(){
             }
             break;
             case 10:
-            verificacao_de_erro = consulta_adocoes(ponteiro_de_adocao);
+            verificacao_de_erro = consulta_adocoes();
             if(verificacao_de_erro != 1){
                 printf("\nNao foi possivel consultar as Adocoes");
             }
