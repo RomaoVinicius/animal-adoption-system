@@ -11,37 +11,68 @@ int cadastrar_adotante() {
     if (resultado_verificacao == 0) {
         return 0;
     }
-
+    
     adotante cadastro_adotante;
+
+    do{
     printf("\nEntre com o nome do adotante: ");
     fgets(cadastro_adotante.nome, sizeof(cadastro_adotante.nome), stdin);
     cadastro_adotante.nome[strcspn(cadastro_adotante.nome, "\n")] = '\0';
+    if (cadastro_adotante.nome[0] == '\0') {
+        printf("Erro: nome inválido. Tente novamente.\n");
+    }
+    }while(cadastro_adotante.nome[0]=='\0');
 
+    do{
     printf("\nEntre com o CPF do adotante: ");
     fgets(cadastro_adotante.cpf, sizeof(cadastro_adotante.cpf), stdin);
     cadastro_adotante.cpf[strcspn(cadastro_adotante.cpf, "\n")] = '\0';
+    if (cadastro_adotante.cpf[0] == '\0') {
+        printf("Erro: Cpf inválido. Tente novamente.\n");
+    }
+    }while(cadastro_adotante.cpf[0]=='\0');
 
+    do{
     printf("\nEntre com o CEP do adotante: ");
     fgets(cadastro_adotante.cep, sizeof(cadastro_adotante.cep), stdin);
-    cadastro_adotante.cep[strcspn(cadastro_adotante.cep, "\n")] = '\0';
+    cadastro_adotante.cep[strcspn(cadastro_adotante.cep, "\n")] = '\0';  
+    if (cadastro_adotante.cep[0] == '\0') {
+        printf("Erro: Cep inválido. Tente novamente.\n");
+    }
+    }while(cadastro_adotante.cep[0]=='\0');
 
+    do{
     printf("\nEntre com o numero de telefone para contato do adotante: ");
     fgets(cadastro_adotante.celular, sizeof(cadastro_adotante.celular), stdin);
     cadastro_adotante.celular[strcspn(cadastro_adotante.celular, "\n")] = '\0';
+    if (cadastro_adotante.celular[0] == '\0') {
+        printf("Erro: Telefone inválido. Tente novamente.\n");
+    }
+    }while(cadastro_adotante.celular[0]=='\0');
 
+    do{
     printf("\nEntre com a especie que o adotante pretende adotar:\n");
     printf("1 - Cachorro\n");
     printf("2 - Gato\n");
     printf("3 - Coelho\n");
     scanf("%i", &cadastro_adotante.preferencia_de_raca);
     limpar_buffer();
+    if(cadastro_adotante.preferencia_de_raca<1 ||cadastro_adotante.preferencia_de_raca>3 ){
+        printf("Erro: especie invalida. Tente novamente.\n");
+    }
+    }while(cadastro_adotante.preferencia_de_raca<1 ||cadastro_adotante.preferencia_de_raca>3 );
 
+    do{
     printf("\nEntre com a faixa etaria que o adotante pretende adotar:\n");
     printf("1 - Recem-nascido (menor de 1 ano)\n");
     printf("2 - Adulto (1 a 10 anos)\n");
     printf("3 - Idoso (acima de 10 anos)\n");
     scanf("%i", &cadastro_adotante.faixaetaria);
     limpar_buffer();
+    if(cadastro_adotante.faixaetaria<1 ||cadastro_adotante.faixaetaria>3 ){
+        printf("Erro: faixaetaria invalida. Tente novamente.\n");
+    }
+    }while(cadastro_adotante.faixaetaria<1 ||cadastro_adotante.faixaetaria>3);
 
     fprintf(banco_de_adotantes, "%s;%s;%s;%s;%i;%i\n",
             cadastro_adotante.cpf,

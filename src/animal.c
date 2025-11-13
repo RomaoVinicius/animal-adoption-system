@@ -21,16 +21,25 @@ int cadastrar_animal(){
         id++;
     }
     cadastro_animal.identificador = id;
-    printf("\nentre com o Nome do animal : ");
+do {
+    printf("\nEntre com o nome do animal: ");
     fgets(cadastro_animal.nome, sizeof(cadastro_animal.nome), stdin);
-    cadastro_animal.nome[strcspn(cadastro_animal.nome, "\n")] = '\0';
+    cadastro_animal.nome[strcspn(cadastro_animal.nome, "\n")] = '\0'; 
+    
+    if (cadastro_animal.nome[0] == '\0') {
+        printf("Erro: nome inválido. Tente novamente.\n");
+    }
+} while (cadastro_animal.nome[0] == '\0');
 
+    do{
     printf("\nentre com a Raca do animal : \n");
     printf("1 - Cachorro\n");
     printf("2 - Gato\n");
     printf("3 - Coelho\n");
     scanf("%i",&cadastro_animal.raca);
     limpar_buffer();
+    }while(cadastro_animal.raca < 1 || cadastro_animal.raca > 3);
+
     do {
         printf("\nDigite a faixa etaria do animal:\n");
         printf("1 - Recem nascido (menor de 1 ano)\n");
