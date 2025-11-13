@@ -19,7 +19,7 @@ int cadastrar_adotante() {
     fgets(cadastro_adotante.nome, sizeof(cadastro_adotante.nome), stdin);
     cadastro_adotante.nome[strcspn(cadastro_adotante.nome, "\n")] = '\0';
     if (cadastro_adotante.nome[0] == '\0') {
-        printf("Erro: nome inválido. Tente novamente.\n");
+        printf("Erro: nome invalido. Tente novamente.\n");
     }
     }while(cadastro_adotante.nome[0]=='\0');
 
@@ -28,7 +28,7 @@ int cadastrar_adotante() {
     fgets(cadastro_adotante.cpf, sizeof(cadastro_adotante.cpf), stdin);
     cadastro_adotante.cpf[strcspn(cadastro_adotante.cpf, "\n")] = '\0';
     if (cadastro_adotante.cpf[0] == '\0') {
-        printf("Erro: Cpf inválido. Tente novamente.\n");
+        printf("Erro: Cpf invalido. Tente novamente.\n");
     }
     }while(cadastro_adotante.cpf[0]=='\0');
 
@@ -37,7 +37,7 @@ int cadastrar_adotante() {
     fgets(cadastro_adotante.cep, sizeof(cadastro_adotante.cep), stdin);
     cadastro_adotante.cep[strcspn(cadastro_adotante.cep, "\n")] = '\0';  
     if (cadastro_adotante.cep[0] == '\0') {
-        printf("Erro: Cep inválido. Tente novamente.\n");
+        printf("Erro: Cep invalido. Tente novamente.\n");
     }
     }while(cadastro_adotante.cep[0]=='\0');
 
@@ -46,7 +46,7 @@ int cadastrar_adotante() {
     fgets(cadastro_adotante.celular, sizeof(cadastro_adotante.celular), stdin);
     cadastro_adotante.celular[strcspn(cadastro_adotante.celular, "\n")] = '\0';
     if (cadastro_adotante.celular[0] == '\0') {
-        printf("Erro: Telefone inválido. Tente novamente.\n");
+        printf("Erro: Telefone invalido. Tente novamente.\n");
     }
     }while(cadastro_adotante.celular[0]=='\0');
 

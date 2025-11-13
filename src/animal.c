@@ -27,7 +27,7 @@ do {
     cadastro_animal.nome[strcspn(cadastro_animal.nome, "\n")] = '\0'; 
     
     if (cadastro_animal.nome[0] == '\0') {
-        printf("Erro: nome inválido. Tente novamente.\n");
+        printf("Erro: nome invalido. Tente novamente.\n");
     }
 } while (cadastro_animal.nome[0] == '\0');
 
@@ -38,6 +38,9 @@ do {
     printf("3 - Coelho\n");
     scanf("%i",&cadastro_animal.raca);
     limpar_buffer();
+    if (cadastro_animal.raca < 1 || cadastro_animal.raca > 3) {
+        printf("Erro: Raca invalida. Tente novamente.\n");
+    }
     }while(cadastro_animal.raca < 1 || cadastro_animal.raca > 3);
 
     do {
