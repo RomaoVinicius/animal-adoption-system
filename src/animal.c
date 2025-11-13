@@ -104,7 +104,7 @@ int deletar_animal(char *identificador_de_exclusao) {
 }
 
 
-int atualizaco_de_animal(char *ponteiro_de_atualizacao){
+int atualizacao_de_animal(char *ponteiro_de_atualizacao){
     int atualizacao_de_atributo,verificacao_de_erro;
     char valor_atualizado[100];
    printf("\n===== ATUALIZAR DADOS DO ANIMAL =====\n");

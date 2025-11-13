@@ -78,7 +78,7 @@ int main(){
             identificador_de_atualizacao[strcspn(identificador_de_atualizacao, "\n")] = '\0';
             ponteiro_de_atualizacao = identificador_de_atualizacao;
 
-            verificacao_de_erro = atualizaco_de_animal(ponteiro_de_atualizacao);
+            verificacao_de_erro = atualizacao_de_animal(ponteiro_de_atualizacao);
             if(verificacao_de_erro == 1){
                 printf("\nAnimal atualizado!");
             }else{
@@ -91,7 +91,7 @@ int main(){
             cpf_de_atualizacao[strcspn(cpf_de_atualizacao, "\n")] = '\0';
             ponteiro_de_atualizacao = cpf_de_atualizacao;
 
-            verificacao_de_erro = atualizaco_de_adotante(ponteiro_de_atualizacao);
+            verificacao_de_erro = atualizacao_de_adotante(ponteiro_de_atualizacao);
             if(verificacao_de_erro == 1){
                 printf("\nAdotante atualizado!");
             }else{

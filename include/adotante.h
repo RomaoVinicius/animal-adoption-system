@@ -12,7 +12,7 @@ typedef struct{
 
 int cadastrar_adotante();
 int deletar_adotante(char *cpf_de_exclusao);
-int atualizaco_de_adotante(char *ponteiro_de_atualizacao);
+int atualizacao_de_adotante(char *ponteiro_de_atualizacao);
 int consulta_geral_adotante();
 int consulta_especifica_adotante();
 #endif
