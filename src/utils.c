@@ -188,25 +188,32 @@ int adocao_de_animal(char *cpf) {
         return 0;
     }
 
-    while (fgets(linha, sizeof(linha), banco_de_animais)) {
-        linha[strcspn(linha, "\r\n")] = '\0';
-        char *token = strtok(linha, ";");
-        char campos[6][50];
-        int i = 0;
+while (fgets(linha, sizeof(linha), banco_de_animais)) {
+    linha[strcspn(linha, "\r\n")] = '\0';
 
-        while (token != NULL && i < 6) {
-            strcpy(campos[i++], token);
-            token = strtok(NULL, ";");
-        }
-
-        // marca como nao apto
-        if (atoi(campos[0]) == id_escolhido) {
-            strcpy(campos[4], "0");
-        }
-
-        fprintf(temp, "%s;%s;%s;%s;%s\n",
-                campos[0], campos[1], campos[2], campos[3], campos[4]);
+    // Mantém a linha ";" original!
+    if (strcmp(linha, ";") == 0) {
+        fprintf(temp, ";\n");
+        continue;
     }
+
+    char *token = strtok(linha, ";");
+    char campos[6][50];
+    int i = 0;
+
+    while (token != NULL && i < 6) {
+        strcpy(campos[i++], token);
+        token = strtok(NULL, ";");
+    }
+
+    if (atoi(campos[0]) == id_escolhido) {
+        strcpy(campos[4], "0");
+    }
+
+    fprintf(temp, "%s;%s;%s;%s;%s\n",
+            campos[0], campos[1], campos[2], campos[3], campos[4]);
+}
+
 
     fclose(banco_de_animais);
     fclose(temp);
